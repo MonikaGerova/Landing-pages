@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="title">
+    <h1>Welcome!</h1>
+    <h3>Enjoy your projects</h3>
+</div>
+<div id="wrapper">
+    <div id="pages">
+        <div id="newPageBtn" class="page">+</div>
+        <!--ko foreach: pagesNames  -->
+            <div class="page" data-bind="text: $data.name, click: function(){ generatePage($data.id)} ">
+            </div>
+        <!--/ko -->
+    </div>
+
+</div>
+
+
+<script src="libs/knockout-3.4.0.js"></script>
+<script src="libs/knockout-3.4.0.debug.js"></script>
+<script src="libs/knockout.validation.js"></script>
+<script src="js/indexScript.js"></script>
+</body>
+</html>

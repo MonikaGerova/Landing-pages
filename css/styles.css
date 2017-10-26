@@ -1,0 +1,37 @@
+#title{
+    margin: 10px auto;
+    width: 960px;
+    text-align: center;
+}
+
+#wrapper{
+    width: 960px;
+    margin: 10px auto;
+    border: 1px solid black;
+    height: 500px;
+}
+#pages{
+    overflow: auto;
+    height: 90%;
+}
+.page{
+    background: #4da3e2;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#newPageBtn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 163, 226, 0.54);
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.45);
+}

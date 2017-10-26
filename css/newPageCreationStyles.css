@@ -1,0 +1,238 @@
+#wrapper{
+    width: 100%;
+    /*max-height: 600px;*/
+    overflow: hidden;
+}
+
+#wrapper >div{
+    display: inline-block;
+    background-color: rgba(239, 238, 238, 0.49);
+    vertical-align: top;
+}
+#templates{
+    width: 15%;
+    max-height: 800px;
+    overflow: auto;
+}
+#page{
+    width: 68%;
+    height: 700px;
+    max-height: 800px;
+    overflow: auto;
+}
+#PageSettings{
+    width: 16%;
+    max-height: 800px;
+    overflow: auto;
+}
+#PageSettings h1, #templates h1{
+  text-align: center;
+font-size: 1.5em;
+background-color: #bd5761;
+color: #d9abb0;
+margin: 0 0 10px;
+padding-bottom: 19%;
+    padding-top: 17%;
+}
+/* Page */
+/*logo */
+#preview{
+    /*height: 80%;*/
+    text-align: center;
+    width: 80%;
+    height: 105px;
+    margin: 0 auto;
+    background-color: rgba(158, 2, 17, 0.65);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2em;
+}
+
+
+#preview >span{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+#preview >img{
+  height: 105px;
+width: 100%;
+}
+#logoFile{
+    display: block;
+    opacity: 0;
+    /* background-color: white; */
+    background: white;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 325px;
+    width: 55%;
+    height: 100px;
+}
+
+#description > div{
+  margin-left: 10%;
+  height: 100%;
+  width: 733px;
+}
+#description >div h1{
+  background-color: rgba(158, 2, 17, 0.65);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2em;
+  margin-bottom: 0px;
+  text-align: center;
+  width: 62%;
+  margin-left: 22%;
+}
+#description >div >div{
+    text-align: center;
+    width: 60%;
+    margin-left: 22%;
+    background-color: rgba(158, 2, 17, 0.65);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    padding: 1%;
+    word-break: break-word;
+}
+#description >div >textarea{
+    border: 1px solid blue;
+    width: 60%;
+    height: 100px;
+    margin-left: 22%;
+}
+/* video */
+
+#EditDeleteVideo,#deleteLogo{
+    text-align: right;
+    right: -55px;
+	  display: inline-block;
+    width: 150px;
+    position: relative;
+    margin-left: 34%;
+}
+#EditDeleteVideo button, #deleteLogo button{
+    border-radius: 5px;
+    border:0.001px solid rgb(222, 171, 176);
+    height: 26px;
+    font-size: 12px;
+    font-family: "ProximaNova";
+    text-transform: uppercase;
+    line-height: 5px;
+    background-color: rgb(222, 171, 176);
+    color: #bd5761;
+}
+#edit {
+  background-color: rgb(189, 87, 97);
+  border:0.001px solid rgb(189, 87, 97);
+  color: #deabb0;
+
+}
+
+.delete {
+  background-color: rgb(189, 87, 97);
+  border:0.001px solid rgb(189, 87, 97);
+  color: #deabb0;
+
+}
+
+#video input, #pageLink input {
+  display: block;
+      width: 420px;
+      height: 30px;
+      border-radius: 3px;
+      border: 0.1px solid rgb(189, 87, 97);
+      padding: 5px 20px;
+      margin: 40px auto 10px;
+      font-size: 18px;
+      font-family: "ProximaNova";
+      color: rgb(189, 87, 97);
+      line-height: 3.889;
+      background-color: rgb(189, 87, 97);
+
+}
+#video input::placeholder, #pageLink input::placeholder{
+  color:rgb(222, 171, 176);
+  background-color: rgb(189, 87, 97);
+
+}
+#EditDeleteVideo button, #deleteLogo button{
+    cursor: pointer;
+}
+#EditDeleteVideo button:hover, #deleteLogo button:hover{
+ background-color: rgb(189, 87, 97);
+ color:rgb(222, 171, 176);
+ border:0.001px solid rgb(189, 87, 97);
+}
+#questions label{
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px dashed #bd5761;
+  margin-top: 1%;
+  margin-top: 10%;
+  border-radius: 19%;
+}
+iframe{
+  text-align: center;
+  margin-left: 27%;
+  margin-top: 5%;
+}
+
+#contacts >div h1{
+  background-color: rgba(158, 2, 17, 0.65);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2em;
+  margin-bottom: 0px;
+  text-align: center;
+  width: 49%;
+  margin-left: 27.5%;
+}
+#contacts >div >div{
+    text-align: center;
+    width: 47%;
+    margin-left: 27.5%;
+    background-color: rgba(158, 2, 17, 0.65);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    padding: 1%;
+    word-break: break-word;
+}
+#preview input{
+  width: 99.5%;
+  height: 96%;
+  background-color: rgba(240, 248, 255, 0);
+
+}
+#pageLink input{
+    color:rgb(222, 171, 176);
+}
+#preview input::placeholder{
+  color:rgb(222, 171, 176);
+  background-color: rgb(189, 87, 97);
+  font-size: 2em;
+  text-align: center;
+}
+.template img{
+    width: 200px;
+}
+label{
+    cursor: pointer;
+}
+input[type=submit]{
+    width: 200px;
+    height: 30px;
+    margin: 5px 10px 20px 5px;
+}
+#nameBox input{
+    display: inline-block;
+    width: 80%;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: "ProximaNova";
+    color: rgb(189, 87, 97);
+}

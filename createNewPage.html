@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/newPageCreationStyles.css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="templates">
+        <h1>Templates</h1>
+        <!--ko foreach: templates  -->
+        <div class="template" data-bind=" click: function() { $parent.changeTemplateID($data.id) }">
+
+            <input type="radio" data-bind="attr:{id: $data.id,checked: ($data.id == $parent.templateID())}">
+            <label data-bind="attr:{for: $data.id}">
+                <span data-bind="text: $data.name"></span>
+                <img data-bind="attr: {src: 'templates/'+$data.preview}">
+
+            </label>
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <div id="page" data-bind="style: {background: background() || '#FFF'}">
+        <div id="logo" data-bind="visible: allowLogo()">
+            <div id="preview">
+                <img data-bind="attr: { src: logoURL}, visible: hasLogo()">
+                <input placeholder="Paste URL to your logo" type="text"
+                       data-bind="textInput: logoURL,visible: !hasLogo()">
+            </div>
+            <div id="deleteLogo">
+                <button class="delete" data-bind="click: deleteLogo()">Delete</button>
+            </div>
+        </div>
+
+        <div id="videoField">
+            <div id="video" data-bind="visible: wantVideo()">
+                <input name="link" id="link" data-bind="textInput: link, visible: !hasLink()"
+                       placeholder="Add video link here">
+                <iframe width="420" height="315" data-bind="visible: hasLink(), attr:{src:link()}">
+                </iframe>
+                <div id="buttons">
+                    <div id="EditDeleteVideo">
+                        <button id="edit" data-bind="click: deleteVideo()">edit</button>
+                        <button class="delete" data-bind="click: deleteVideo()">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="description">
+            <div data-bind="visible: wantDescription()">
+                <h1>Description</h1>
+                <div data-bind="text:description(),visible:!activeEditingDescription(),click:editingDescription">
+                </div>
+                <textarea id="descriptionContent"
+                          data-bind="textInput:description,visible:activeEditingDescription()"></textarea>
+            </div>
+        </div>
+        <div id="contacts">
+            <div data-bind="visible: wantContacts()">
+                <h1>Contacts</h1>
+                <div id="contacts-list">
+                    <!--ko foreach: contacts  -->
+                    <!-- ko template: 'contact-template' -->
+                    <!-- /ko -->
+                    <!-- /ko -->
+                    <div id="AddContactPanel" data-bind="visible: newContact()">
+                        <input type="text" class="name" data-bind="textInput: $data.tempContactName">
+                        <input class="phoneNumber" data-bind="textInput: $data.tempContactNumber">
+                        <button data-bind="click: addNewContact">\/</button>
+                        <button data-bind="click: createNewContact">X</button>
+                    </div>
+                    <div id="add" type="text" data-bind="click: createNewContact">+</div>
+                </div>
+            </div>
+        </div>
+        <div id="PageLinkBox">
+            <div id="pageLink" data-bind="visible: wantButton()">
+                <input name="pageLink" data-bind="textInput: pageLink" placeholder="Add page url here">
+            </div>
+
+        </div>
+    </div>
+    <div id="PageSettings">
+        <h1>Settings</h1>
+        <div id="save">
+            <form method="post" action="index.html">  <!-- action="templates/1/index.html"-->
+                <input type="submit" value="Save">
+            </form>
+        </div>
+        <div id="nameBox">
+            <input type="text" placeholder="name" data-bind="textInput: name">
+        </div>
+        <div id="questions">
+            <div data-bind="visible: allowBackground()">
+                <label for="backgroundBox">Change background </label>
+                <input id="backgroundBox" type="color" data-bind="value: background">
+            </div>
+            <div data-bind="visible: allowVideo()">
+                <label for="videoCheckBox">Do you want to add video? </label>
+                <input id="videoCheckBox" type="checkbox" data-bind="checked: wantVideo">
+            </div>
+            <div data-bind="visible: allowDescription()">
+                <label for="descriptionCheckBox">Add description of your idea?</label>
+                <input type="checkbox" id="descriptionCheckBox" data-bind="checked: wantDescription">
+            </div>
+            <div data-bind="visible: allowContacts()">
+                <label for="contactsCheckBox">Add Contacts field?</label>
+                <input id="contactsCheckBox" type="checkbox" data-bind="checked: wantContacts">
+            </div>
+            <div data-bind="visible: allowComments()">
+                <label for="commentCheckBox">Add a comment Box?</label>
+                <input id="commentCheckBox" type="checkbox" data-bind="checked: wantCommentBox">
+            </div>
+            <div data-bind="visible: allowButton()">
+                <label for="buttonBox">Link Button?</label>
+                <input id="buttonBox" type="checkbox" data-bind="checked: wantButton">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script type="text/html" id="contact-template">
+        <div class="contact">
+            <span class="name" data-bind="text: $data.name"></span>
+            <span class="phoneNumber" data-bind="text: $data.number"></span>
+        </div>
+    </script>
+
+
+    <script src="libs/knockout-3.4.0.js"></script>
+    <script src="libs/knockout-3.4.0.debug.js"></script>
+    <script src="libs/knockout.validation.js"></script>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
